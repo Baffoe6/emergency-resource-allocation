@@ -45,11 +45,12 @@ emergency-resource-allocation
 │   ├── test_incident.py            # Tests for the Incident model
 │   ├── test_resource.py            # Tests for the Resource model
 │   └── test_user.py                # Tests for the User model
-├── [uml_diagram.puml](http://_vscodecontentref_/3)                # PlantUML script for the UML Class Diagram
-├── [uml_diagram.png](http://_vscodecontentref_/4)                 # Generated UML Class Diagram
-├── [requirements.txt](http://_vscodecontentref_/5)                # Python dependencies
-├── [README.md](http://_vscodecontentref_/6)                       # Project documentation
-└── [activity.log](http://_vscodecontentref_/7)                    # Log file for tracking system activities
+├── .gitignore                      # Specifies files and directories to ignore in Git
+├── [uml_diagram.puml](http://_vscodecontentref_/10)                # PlantUML script for the UML Class Diagram
+├── [uml_diagram.png](http://_vscodecontentref_/11)                 # Generated UML Class Diagram
+├── [requirements.txt](http://_vscodecontentref_/12)                # Python dependencies
+├── [README.md](http://_vscodecontentref_/13)                       # Project documentation
+└── [activity.log](http://_vscodecontentref_/14)                    # Log file for tracking system activities
 
 How to Run the Application
 
@@ -61,12 +62,12 @@ cd emergency-resource-allocation
 2. Install Dependencies
 Ensure you have Python installed. Install the required dependencies:
 
-pip install -r [requirements.txt](http://_vscodecontentref_/5)
+pip install -r [requirements.txt](http://_vscodecontentref_/12)
 
 3. Run the Application
 Start the application by running:
 
-python [main.py](http://_vscodecontentref_/4)
+python [main.py](http://_vscodecontentref_/11)
 
 4. Run Tests
 Run the unit tests to ensure everything is working correctly:
@@ -152,11 +153,12 @@ Below is the UML Class Diagram for the Emergency Resource Allocation System:
 
 ![UML Class Diagram](uml_diagram.png)
 
-Future Improvements
-Add a graphical user interface (GUI) for better usability.
-Integrate with external APIs for real-time resource tracking (e.g., GPS).
-Implement machine learning for predictive resource allocation.
-Add multi-language support for broader accessibility.
+## Future Improvements
+- Add a graphical user interface (GUI) for better usability.
+- Integrate with external APIs for real-time resource tracking (e.g., GPS).
+- Implement machine learning for predictive resource allocation.
+- Add multi-language support for broader accessibility.
+- Enhance the resource allocation algorithm with optimization techniques.
 
 plantuml
 ![alt text](<Screenshot 2025-04-10 220448-2.png>)
