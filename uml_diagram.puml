@@ -1,0 +1,61 @@
+@startuml EmergencyResourceAllocation
+class Incident {
+    - location: str
+    - type: str
+    - priority: str
+    - required_resources: list
+    + update_priority(new_priority: str)
+    + update_details(location: str, type: str, priority: str, resources: list)
+}
+
+class Resource {
+    - resource_type: str
+    - location: str
+    - availability: bool
+    - etc: int
+    + update_availability(new_availability: bool)
+}
+
+class User {
+    - username: str
+    - password: str
+    - role: str
+    + authenticate(username: str, password: str): bool
+}
+
+class ConsoleInterface {
+    - allocation_service: AllocationService
+    - reallocation_service: ReallocationService
+    - metrics_service: MetricsService
+    - data_storage: DataStorage
+    - logger: Logger
+    + run()
+    + log_incident()
+    + add_resource()
+    + view_resources()
+    + allocate_resources()
+}
+
+class MetricsService {
+    - resources_in_use: int
+    - total_resources: int
+    + calculate_utilization(): str
+    + predict_availability(resources: list): list
+}
+
+class Logger {
+    - log_file: str
+    + log(message: str)
+}
+
+class DataStorage {
+    - filename: str
+    + save_data(data: dict)
+    + load_data(): dict
+}
+
+ConsoleInterface --> MetricsService
+ConsoleInterface --> Logger
+ConsoleInterface --> DataStorage
+MetricsService --> Resource
+@enduml

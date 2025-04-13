@@ -1,0 +1,44 @@
+{
+    "incidents": [
+        {
+            "location": "Zone 4",
+            "type": "Fire",
+            "priority": "High",
+            "required_resources": [
+                "Fire Truck",
+                "Ambulance",
+                "Support Staff",
+                "Paramedics",
+                "Fire Service",
+                "Police"
+            ]
+        },
+        {
+            "location": "Zone 5",
+            "type": "Flood",
+            "priority": "High",
+            "required_resources": [
+                "Support Service",
+                "Ambulance",
+                "paramedics"
+            ]
+        }
+    ],
+    "resources": [
+        {
+            "type": "Ambulance, Support Staff, Helicopter, Fire Truck",
+            "location": "Zone 4",
+            "availability": true
+        },
+        {
+            "type": "Fire Equipments",
+            "location": "Zone 4",
+            "availability": true
+        },
+        {
+            "type": "life Jackets, canone, ",
+            "location": "Zone 5",
+            "availability": true
+        }
+    ]
+}
