@@ -21,3 +21,22 @@ class User:
 
     def __repr__(self):
         return f"User(username={self.username}, role={self.role})"
+
+    def change_password(self, old_password, new_password):
+        """
+        Change the user's password if the old password matches.
+        :param old_password: str
+        :param new_password: str
+        :return: bool
+        """
+        if self.authenticate(self.username, old_password):
+            self.password = new_password
+            return True
+        return False
+
+    def update_role(self, new_role):
+        """
+        Update the user's role.
+        :param new_role: str
+        """
+        self.role = new_role

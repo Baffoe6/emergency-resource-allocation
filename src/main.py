@@ -5,23 +5,33 @@ from services.metrics_service import MetricsService
 from utils.data_storage import DataStorage
 from utils.logger import Logger
 
-def main():
-    # Initialize services
-    allocation_service = AllocationService()
-    reallocation_service = ReallocationService()
-    metrics_service = MetricsService()
+def initialize_services():
+    """Initialize and return all services."""
+    return {
+        'allocation_service': AllocationService(),
+        'reallocation_service': ReallocationService(),
+        'metrics_service': MetricsService()
+    }
 
-    # Initialize utilities
-    data_storage = DataStorage()
-    logger = Logger()
+def initialize_utilities():
+    """Initialize and return all utilities."""
+    return {
+        'data_storage': DataStorage(),
+        'logger': Logger()
+    }
+
+def main():
+    # Initialize services and utilities
+    services = initialize_services()
+    utilities = initialize_utilities()
 
     # Pass all components to the ConsoleInterface
     console_interface = ConsoleInterface(
-        allocation_service,
-        reallocation_service,
-        metrics_service,
-        data_storage,
-        logger
+        services['allocation_service'],
+        services['reallocation_service'],
+        services['metrics_service'],
+        utilities['data_storage'],
+        utilities['logger']
     )
 
     # Start the console interface
@@ -29,5 +39,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
