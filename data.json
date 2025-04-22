@@ -22,6 +22,17 @@
                 "Ambulance",
                 "paramedics"
             ]
+        },
+        {
+            "location": "Zone 6",
+            "type": "Fire",
+            "priority": "High",
+            "required_resources": [
+                "Fire Truck",
+                "Ambulance",
+                "Support Services",
+                "Paramedics"
+            ]
         }
     ],
     "resources": [
