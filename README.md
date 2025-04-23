@@ -45,69 +45,101 @@ emergency-resource-allocation
 │   ├── test_incident.py            # Tests for the Incident model
 │   ├── test_resource.py            # Tests for the Resource model
 │   └── test_user.py                # Tests for the User model
+├── docs                            # Documentation and related files
+│   ├── uml_diagram.puml            # PlantUML script for the UML Class Diagram
+│   ├── uml_diagram.png             # Generated UML Class Diagram
+│   └── USAGE.md                    # Detailed usage guide for the application
+├── logs                            # Directory for log files
+│   └── activity.log                # Log file for tracking system activities
+├── .git                            # Git repository metadata (hidden folder)
 ├── .gitignore                      # Specifies files and directories to ignore in Git
-├── [uml_diagram.puml](http://_vscodecontentref_/10)                # PlantUML script for the UML Class Diagram
-├── [uml_diagram.png](http://_vscodecontentref_/11)                 # Generated UML Class Diagram
-├── [requirements.txt](http://_vscodecontentref_/12)                # Python dependencies
-├── [README.md](http://_vscodecontentref_/13)                       # Project documentation
-└── [activity.log](http://_vscodecontentref_/14)                    # Log file for tracking system activities
+├── requirements.txt                # Python dependencies
+├── README.md                       # Project documentation
+└── LICENSE                         # License file for the project
+```
 
-How to Run the Application
+---
+
+## How to Run the Application
 
 1. Clone the Repository
 
+```bash
 git clone <repository-url>
 cd emergency-resource-allocation
+```
 
 2. Install Dependencies
 Ensure you have Python installed. Install the required dependencies:
 
-pip install -r [requirements.txt](http://_vscodecontentref_/12)
+```bash
+pip install -r requirements.txt
+```
 
 3. Run the Application
 Start the application by running:
 
-python [main.py](http://_vscodecontentref_/11)
+```bash
+python src/main.py
+```
 
 4. Run Tests
 Run the unit tests to ensure everything is working correctly:
 
+```bash
 set PYTHONPATH=src
 python -m unittest discover -s tests
+```
 
-Components
-1. Models
-incident.py: Represents an emergency incident with attributes like location, type, priority, and required resources.
-resource.py: Represents a resource with attributes like type, location, availability, and estimated time to completion (ETC).
-user.py: Represents a user with attributes like username, password, and role (e.g., admin, coordinator).
-2. Services
-allocation_service.py: Handles the logic for allocating resources to incidents.
-reallocation_service.py: Handles reallocation of resources when priorities change.
-metrics_service.py: Tracks resource utilization and predicts resource availability.
-3. Utilities
-data_storage.py: Saves and loads data (e.g., incidents, resources) to/from a JSON file.
-input_validation.py: Validates user inputs to ensure data integrity.
-logger.py: Logs all user actions and system events to a log file (activity.log).
-4. User Interface
-console_interface.py: Provides a text-based menu for interacting with the system.
-5. Tests
+---
+
+## Components
+
+### 1. Models
+- **incident.py**: Represents an emergency incident with attributes like location, type, priority, and required resources.
+- **resource.py**: Represents a resource with attributes like type, location, availability, and estimated time to completion (ETC).
+- **user.py**: Represents a user with attributes like username, password, and role (e.g., admin, coordinator).
+
+### 2. Services
+- **allocation_service.py**: Handles the logic for allocating resources to incidents.
+- **reallocation_service.py**: Handles reallocation of resources when priorities change.
+- **metrics_service.py**: Tracks resource utilization and predicts resource availability.
+
+### 3. Utilities
+- **data_storage.py**: Saves and loads data (e.g., incidents, resources) to/from a JSON file.
+- **input_validation.py**: Validates user inputs to ensure data integrity.
+- **logger.py**: Logs all user actions and system events to a log file (activity.log).
+
+### 4. User Interface
+- **console_interface.py**: Provides a text-based menu for interacting with the system.
+
+### 5. Tests
 Unit tests for all components, including models, services, and utilities.
 
-Logging
+---
+
+## Logging
 All user actions and system events are logged in the activity.log file. This includes:
 
-User logins and actions.
-Incidents and resources added or updated.
-Resource allocation and reallocation events.
+- User logins and actions.
+- Incidents and resources added or updated.
+- Resource allocation and reallocation events.
+
 Example log entries:
+```plaintext
 [2025-04-09 10:00:00] User logged in as admin.
 [2025-04-09 10:05:00] New incident logged: Zone 1, Fire, High Priority.
 [2025-04-09 10:10:00] Resource added: Ambulance, Zone 2, Available.
 [2025-04-09 10:15:00] Resources allocated to incidents.
+```
 
-Features in Action
-Main Menu
+---
+
+## Features in Action
+
+### Main Menu
 When the program starts, the main menu is displayed:
+```plaintext
 Welcome to the Emergency Resource Allocation System!
 Please select an option:
 1. Log a new incident
@@ -118,10 +150,12 @@ Please select an option:
 6. View resource utilization metrics
 7. View historical data
 8. Exit
+```
 
-Example Outputs
-1. Logging a New Incident:
+### Example Outputs
 
+#### 1. Logging a New Incident:
+```plaintext
 Enter incident details:
 Location: Zone 1
 Type of emergency: Fire
@@ -129,29 +163,39 @@ Priority level (high/medium/low): High
 Required resources (comma-separated): Fire Truck, Medical Team
 
 Incident logged successfully!
+```
 
-2. Adding a New Resource:
+#### 2. Adding a New Resource:
+```plaintext
 Enter resource details:
 Resource type: Ambulance
 Location: Zone 2
 Availability (yes/no): yes
 
 Resource added successfully!
+```
 
-3. Viewing Resource Utilization Metrics:
-
+#### 3. Viewing Resource Utilization Metrics:
+```plaintext
 Resource Utilization Metrics:
 Resource Utilization: 50.00%
+```
 
-4. Predicting Resource Availability:
+#### 4. Predicting Resource Availability:
+```plaintext
 Resource Availability Predictions:
 Resource: Ambulance, Location: Zone 2, Available in: 10 minutes
+```
+
+---
 
 ## UML Class Diagram
 
 Below is the UML Class Diagram for the Emergency Resource Allocation System:
 
-![UML Class Diagram](uml_diagram.png)
+![UML Class Diagram](docs/uml_diagram.png)
+
+---
 
 ## Future Improvements
 - Add a graphical user interface (GUI) for better usability.
@@ -160,5 +204,7 @@ Below is the UML Class Diagram for the Emergency Resource Allocation System:
 - Add multi-language support for broader accessibility.
 - Enhance the resource allocation algorithm with optimization techniques.
 
-plantuml
-![alt text](<Screenshot 2025-04-10 220448-2.png>)
+---
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
